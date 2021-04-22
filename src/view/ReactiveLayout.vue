@@ -10,13 +10,13 @@
       <el-col :md="12" :span="6">
         <div class="grid-content bg-purple"></div>
       </el-col>
-      <el-col  :md="12" :span="6">
+      <el-col :md="12" :span="6">
         <div class="grid-content bg-purple-light"></div>
       </el-col>
-      <el-col  :md="12" :span="6">
+      <el-col :md="12" :span="6">
         <div class="grid-content bg-purple"></div>
       </el-col>
-      <el-col  :md="12" :span="6">
+      <el-col :md="12" :span="6">
         <div class="grid-content bg-purple-light"></div>
       </el-col>
     </el-row>
@@ -24,6 +24,14 @@
 </template>
 
 <script>
+  const SerialPort = window.require('serialport')
+
+  SerialPort.list().then((portInfos)=>{
+    portInfos.forEach((portInfo)=>{
+      console.log(`portInfo.path:${portInfo.path}`);
+    });
+  })
+
   export default {
     name: "ReactiveLayout"
   }
